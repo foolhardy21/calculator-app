@@ -29,6 +29,36 @@ body {
   font-size: 1.4vmax;
 }
 
+.switch-field {
+  display: flex;
+}
+.switch-field input {
+  position: absolute !important;
+  height: 0;
+	width: 0;
+	border: 0;
+	overflow: hidden;
+}
+.switch-field label {
+	background-color: hsl(223, 31%, 20%);
+	padding: 1.2vh 0.9vw;
+	transition: all 0.1s ease-in-out;
+}
+.switch-field label:hover {
+	cursor: pointer;
+}
+.switch-field input:checked + label {
+	background-color: hsl(6, 63%, 50%);
+}
+.switch-field label:first-of-type {
+	border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.switch-field label:last-of-type {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .display input {
   padding: 2vh;
   background: hsl(224, 36%, 15%);
