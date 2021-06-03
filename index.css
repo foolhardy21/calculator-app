@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: brown;
+}
+.buttons {
+  display: grid;
+  grid-template-rows: 2em 2em 2em 2em;
+  grid-template-columns: 2em 2em 2em 2em;
+}
