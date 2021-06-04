@@ -3,8 +3,26 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  /* default theme 1 */
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+
+  --reset-del-key-background: hsl(225, 21%, 49%);
+  --reset-del-key-shadow: hsl(224, 28%, 35%);
+  --equalto-key-background-toggle: hsl(6, 63%, 50%);
+  --equalto-key-shadow: hsl(6, 70%, 34%);
+  --op-key-background: hsl(30, 25%, 89%);
+  --op-key-shadow: hsl(28, 16%, 65%);
+
+  --op-text: hsl(221, 14%, 31%);
+  --reset-del-text: hsl(0, 0%, 100%);
+  --equalto-text: hsl(0, 0%, 100%);
+  --heading-text: hsl(0, 0%, 100%);
+}
 body {
-  background: hsl(222, 26%, 31%);
+  background: var(--main-background);
   display: flex;
   justify-content: center;
 }
@@ -25,7 +43,7 @@ body {
   align-items: center;
 }
 .heading p{
-  color: hsl(0, 0%, 100%);
+  color: var(--heading-text);
   font-size: 1.4vmax;
 }
 
@@ -40,15 +58,15 @@ body {
 	overflow: hidden;
 }
 .switch-field label {
-	background-color: hsl(223, 31%, 20%);
-	padding: 1.2vh 0.9vw;
+	background-color: var(--toggle-keypad-background);
+	padding: 0vh 0.8vw;
 	transition: all 0.1s ease-in-out;
 }
 .switch-field label:hover {
 	cursor: pointer;
 }
 .switch-field input:checked + label {
-	background-color: hsl(6, 63%, 50%);
+	background-color: var(--equalto-key-background-toggle);
 }
 .switch-field label:first-of-type {
 	border-top-left-radius: 10px;
@@ -61,10 +79,10 @@ body {
 
 .display input {
   padding: 2vh;
-  background: hsl(224, 36%, 15%);
+  background: var(--screen-background);
   border-style: none;
   border-radius: 8px;
-  color: hsl(0,0%,100%);
+  color: var(--heading-text);
   font-family: 'Spartan', sans-serif;
   font-size: 5vmin;
   width: 100%;
@@ -75,7 +93,7 @@ body {
   border-radius: 5px;
   padding: 2vmin;
   height: 50vh;
-  background: hsl(223, 31%, 20%);
+  background: var(--toggle-keypad-background);
   display: grid;
   column-gap: 2.5vmin;
   row-gap: 2.5vmin;
@@ -97,19 +115,19 @@ button {
 }
 .op {
   font-size: 2vmax;
-  background: hsl(30, 25%, 89%);
-  color: hsl(0, 0%, 30%);
-  box-shadow: 0 0.2vmax 0 0 hsl(28, 16%, 65%);
+  background: var(--op-key-background);
+  color: var(--op-text);
+  box-shadow: 0 0.2vmax 0 0 var(--op-key-shadow);
 }
 .reset, .delete {
   text-transform: uppercase;
-  color: hsl(0,0%,100%);
-  background: hsl(225, 21%, 49%);
-  box-shadow: 0 0.2vmax 0 0 hsl(224, 28%, 35%);
+  color: var(--reset-del-text);
+  background: var(--reset-del-key-background);
+  box-shadow: 0 0.2vmax 0 0 var(--reset-del-key-shadow);
 }
 
 .equalto {
-  color: hsl(0,0%,100%);
-  background: hsl(6, 63%, 50%);
-  box-shadow: 0 0.2vmax 0 0 hsl(6, 70%, 34%);
+  color: var(--equalto-text);
+  background: var(--equalto-key-background-toggle);
+  box-shadow: 0 0.2vmax 0 0 var(--equalto-key-shadow);
 }
