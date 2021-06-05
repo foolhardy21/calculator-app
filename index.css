@@ -25,6 +25,7 @@ body {
   background: var(--main-background);
   display: flex;
   justify-content: center;
+  user-select: none;
 }
 
 .calculator {
