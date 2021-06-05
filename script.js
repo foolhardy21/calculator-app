@@ -1,39 +1,3 @@
-// class Calculator {
-//   constructor(operandsText) {
-//
-//     this.firstOperandText = operandsText.split(operandsText.match(/[+-/*]/))[0]
-//     this.lastOperandText = operandsText.split(operandsText.match(/[+-/*]/))[1]
-//     this.clear()
-//   }
-//
-//   clear() {
-//     this.firstOperand = ''
-//     this.lastOperand = ''
-//     this.operation = undefined
-//   }
-//
-//   delete() {
-//
-//   }
-//
-//   appendNumber(number) {
-//     this.lastOperand = number
-//   }
-//
-//   chooseOperation(operation) {
-//
-//   }
-//
-//   compute() {
-//
-//   }
-//
-//   updateDisplay() {
-//     this.lastOperandText.innerText = this.currentOperand
-//   }
-// }
-
-
 const root = document.documentElement;
 const radios = document.forms['radio-form'].elements['switch-one']
 const numberButton = document.querySelectorAll('[data-number]')
@@ -63,20 +27,25 @@ deleteButton.addEventListener('click',() => {
   operandsText.innerText = operandsTextArr.join('')
 })
 equalsButton.addEventListener('click',() => {
-  const operation = operandsText.innerText.match(/[\+\-\/x]/)
-  const firstOperand = parseFloat(operandsText.innerText.split(operation[0])[0])
-  const secondOperand = parseFloat(operandsText.innerText.split(operation[0])[1])
-  console.log((operation[0]),(firstOperand),(secondOperand))
-  switch(operation[0]) {
-    case '+': operandsText.innerText = (firstOperand+secondOperand).toString()
-              break;
-    case '-': operandsText.innerText = (firstOperand-secondOperand).toString()
-              break;
-    case 'x': operandsText.innerText = (firstOperand*secondOperand).toString()
-              break;
-    case '/': operandsText.innerText = (firstOperand/secondOperand).toString()
-              break;
+  if(!operandsText.innerText) {
+    return;
+  } else {
 
+    const operation = operandsText.innerText.match(/[\+\-\/x]/)
+    const firstOperand = parseFloat(operandsText.innerText.split(operation[0])[0])
+    const secondOperand = parseFloat(operandsText.innerText.split(operation[0])[1])
+
+    switch(operation[0]) {
+      case '+': operandsText.innerText = (firstOperand+secondOperand).toString()
+                break;
+      case '-': operandsText.innerText = (firstOperand-secondOperand).toString()
+                break;
+      case 'x': operandsText.innerText = (firstOperand*secondOperand).toString()
+                break;
+      case '/': operandsText.innerText = (firstOperand/secondOperand).toString()
+                break;
+
+    }
   }
 })
 
