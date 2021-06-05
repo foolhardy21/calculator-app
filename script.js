@@ -1,28 +1,88 @@
+// class Calculator {
+//   constructor(operandsText) {
+//
+//     this.firstOperandText = operandsText.split(operandsText.match(/[+-/*]/))[0]
+//     this.lastOperandText = operandsText.split(operandsText.match(/[+-/*]/))[1]
+//     this.clear()
+//   }
+//
+//   clear() {
+//     this.firstOperand = ''
+//     this.lastOperand = ''
+//     this.operation = undefined
+//   }
+//
+//   delete() {
+//
+//   }
+//
+//   appendNumber(number) {
+//     this.lastOperand = number
+//   }
+//
+//   chooseOperation(operation) {
+//
+//   }
+//
+//   compute() {
+//
+//   }
+//
+//   updateDisplay() {
+//     this.lastOperandText.innerText = this.currentOperand
+//   }
+// }
 
-// let selected = document.querySelector('input[type="radio"]:checked');
-//
-// // console.log(selected)
-// --main-background: hsl(222, 26%, 31%);
-// --toggle-keypad-background: hsl(223, 31%, 20%);
-// --screen-background: hsl(224, 36%, 15%);
-//
-// --reset-del-key-background: hsl(225, 21%, 49%);
-// --reset-del-key-shadow: hsl(224, 28%, 35%);
-// --equalto-key-background-toggle: hsl(6, 63%, 50%);
-// --equalto-key-shadow: hsl(6, 70%, 34%);
-// --op-key-background: hsl(30, 25%, 89%);
-// --op-key-shadow: hsl(28, 16%, 65%);
-//
-// --op-text: hsl(221, 14%, 31%);
-// --other-text: hsl(0, 0%, 100%);
 
-let radios = document.forms['radio-form'].elements['switch-one']
-let root = document.documentElement;
+const root = document.documentElement;
+const radios = document.forms['radio-form'].elements['switch-one']
+const numberButton = document.querySelectorAll('[data-number]')
+const operationButton = document.querySelectorAll('[data-operation]')
+const operandsText = document.querySelector('[data-operands]')
+const deleteButton = document.querySelector('[data-delete]')
+const resetButton = document.querySelector('[data-reset]')
+const equalsButton = document.querySelector('[data-equals]')
+
+
+numberButton.forEach(button => {
+  button.addEventListener('click',() => {
+    operandsText.innerText += button.innerText
+  })
+})
+operationButton.forEach(button => {
+  button.addEventListener('click',() => {
+    operandsText.innerText += button.innerText
+  })
+})
+resetButton.addEventListener('click',() => {
+  operandsText.innerText = ''
+})
+deleteButton.addEventListener('click',() => {
+  operandsTextArr = operandsText.innerText.split('')
+  operandsTextArr = operandsTextArr.splice(0,operandsTextArr.length-1)
+  operandsText.innerText = operandsTextArr.join('')
+})
+equalsButton.addEventListener('click',() => {
+  const operation = operandsText.innerText.match(/[\+\-\/x]/)
+  const firstOperand = parseFloat(operandsText.innerText.split(operation[0])[0])
+  const secondOperand = parseFloat(operandsText.innerText.split(operation[0])[1])
+  console.log((operation[0]),(firstOperand),(secondOperand))
+  switch(operation[0]) {
+    case '+': operandsText.innerText = (firstOperand+secondOperand).toString()
+              break;
+    case '-': operandsText.innerText = (firstOperand-secondOperand).toString()
+              break;
+    case 'x': operandsText.innerText = (firstOperand*secondOperand).toString()
+              break;
+    case '/': operandsText.innerText = (firstOperand/secondOperand).toString()
+              break;
+
+  }
+})
 
 for(let i = 0; i < radios.length; i++) {
   radios[i].onclick = function() {
-
-    let chosenValue = Number(this.value)
+    const chosenValue = Number(this.value)
     if( chosenValue === 1 ) {
       root.style.setProperty('--main-background', 'hsl(222, 26%,31%)');
       root.style.setProperty('--toggle-keypad-background', 'hsl(223, 31%, 20%)');

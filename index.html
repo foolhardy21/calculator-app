@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel='stylesheet' href='index.css' >
+  <script src='script.js' defer></script>
   <title>Frontend Mentor | Calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -27,31 +28,31 @@
         </form>
       </div>
     </div>
-    <div class='display'>
-      <input type='text'/>
+    <div data-operands class='display'>
+      <!--<input type='text'/> -->12334
     </div>
     <div class='buttons-container'>
-      <button class='op'>7</button>
-      <button class='op'>8</button>
-      <button class='op'>9</button>
-      <button class='delete'>del</button>
-      <button class='op'>4</button>
-      <button class='op'>5</button>
-      <button class='op'>6</button>
-      <button class='op'>+</button>
-      <button class='op'>1</button>
-      <button class='op'>2</button>
-      <button class='op'>3</button>
-      <button class='op'>-</button>
-      <button class='op'>.</button>
-      <button class='op'>0</button>
-      <button class='op'>/</button>
-      <button class='op'>x</button>
-      <button class='reset'>reset</button>
-      <button class='equalto'>=</button>
+      <button data-number class='op'>7</button>
+      <button data-number class='op'>8</button>
+      <button data-number class='op'>9</button>
+      <button data-delete class='delete'>del</button>
+      <button data-number class='op'>4</button>
+      <button data-number class='op'>5</button>
+      <button data-number class='op'>6</button>
+      <button data-operation class='op'>+</button>
+      <button data-number class='op'>1</button>
+      <button data-number class='op'>2</button>
+      <button data-number class='op'>3</button>
+      <button data-operation class='op'>-</button>
+      <button data-number class='op'>.</button>
+      <button data-number class='op'>0</button>
+      <button data-operation class='op'>/</button>
+      <button data-operation class='op'>x</button>
+      <button data-reset class='reset'>reset</button>
+      <button data-equals class='equalto'>=</button>
     </div>
   </div>
 
 </body>
-<script src='script.js'></script>
+
 </html>
