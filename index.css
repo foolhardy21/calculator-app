@@ -133,3 +133,18 @@ button {
   background: var(--equalto-key-background-toggle);
   box-shadow: 0 0.2vmax 0 0 var(--equalto-key-shadow);
 }
+
+@media (max-width: 500px) {
+  .calculator {
+    width: 80vw;
+  }
+  .heading p {
+    font-size: 4vmax;
+  }
+  .switch-field {
+    width: 10vw;
+  }
+  .switch-field label {
+    padding: 0.3vh 1.8vw;
+  }
+}
