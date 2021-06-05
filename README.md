@@ -29,8 +29,8 @@ Users should be able to:
 ### Screenshot
 
 ![Desktop Theme 1](./screenshots/desktop-1.JPG)
-![Desktop Theme 2](./screenshot/desktop-2.JPG)
-![Desktop Theme 3](./screenshot/desktop-3.JPG)
+![Desktop Theme 2](./screenshots/desktop-2.JPG)
+![Desktop Theme 3](./screenshots/desktop-3.JPG)
 
 ### Links
 
