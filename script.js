@@ -1,4 +1,4 @@
-const root = document.documentElement;
+const root = document.documentElement
 const radios = document.forms['radio-form'].elements['switch-one']
 const numberButton = document.querySelectorAll('[data-number]')
 const operationButton = document.querySelectorAll('[data-operation]')
@@ -9,12 +9,19 @@ const equalsButton = document.querySelector('[data-equals]')
 
 numberButton.forEach(button => {
   button.addEventListener('click',() => {
-    updateText(button.innerText)
+
+    (button.innerText === '.') ?
+      (operandsText.innerText.includes(button.innerText))
+        ? null : updateText(button.innerText)
+     : updateText(button.innerText)
+
   })
 })
 operationButton.forEach(button => {
   button.addEventListener('click',() => {
-    updateText(button.innerText)
+
+    ((/[\+\-x\/]/).test(operandsText.innerText)) ?  null
+      : updateText(button.innerText)
   })
 })
 resetButton.addEventListener('click',() => {
